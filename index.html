@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Objet trouvé – Merci | found-me.ch</title>
+<style>
+  :root{
+    --bg: #F3F6F5;
+    --card: #FFFFFF;
+    --ink: #1B2B27;
+    --ink-soft: #55635F;
+    --teal: #1F6F5C;
+    --teal-dark: #16594A;
+    --mint: #E4F2ED;
+    --amber: #C97A2B;
+    --amber-bg: #FBF0E2;
+    --whatsapp: #22B858;
+    --ring: #D8E6E1;
+  }
+  *{ box-sizing:border-box; }
+  html,body{
+    margin:0; padding:0; min-height:100vh;
+    background: radial-gradient(120% 90% at 50% -10%, #E9F3F0 0%, var(--bg) 55%);
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color:var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    padding:28px 16px;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+  .tag-wrap{ position:relative; width:100%; max-width:400px; }
+  .cord{
+    width:3px; height:34px; margin:0 auto;
+    background:repeating-linear-gradient(to bottom, var(--teal) 0 6px, transparent 6px 10px);
+    border-radius:2px;
+  }
+  .card{
+    position:relative; background:var(--card); border-radius:28px;
+    padding:38px 26px 30px;
+    box-shadow: 0 1px 2px rgba(20,40,35,0.04), 0 18px 40px -12px rgba(20,55,45,0.18);
+    text-align:center;
+  }
+  .punch{
+    position:absolute; top:-17px; left:50%; transform:translateX(-50%);
+    width:34px; height:34px; border-radius:50%;
+    background:var(--bg); border:3px solid var(--ring);
+  }
+  .punch::after{
+    content:""; position:absolute; inset:9px; border-radius:50%;
+    background:var(--card); box-shadow: inset 0 2px 3px rgba(20,40,35,0.08);
+  }
+  .eyebrow{
+    font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--teal); font-weight:700; margin:6px 0 4px;
+  }
+  .eyebrow-en{
+    font-size:11px; letter-spacing:.06em; text-transform:none;
+    color:#9AA6A2; font-weight:500; font-style:italic; margin:0 0 12px;
+  }
+  h1{
+    font-family:'Fraunces', serif; font-weight:600; font-size:26px;
+    line-height:1.25; margin:0 0 14px; color:var(--ink);
+  }
+  .msg{ font-size:15px; line-height:1.55; color:var(--ink-soft); margin:0 0 4px; }
+  .en{ font-size:12.5px; line-height:1.5; color:#8B9793; font-style:italic; }
+  .en.msg-en{ margin:0 0 26px; }
+  .owner{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--mint); color:var(--teal-dark);
+    font-weight:600; font-size:14px; padding:8px 16px;
+    border-radius:999px; margin-bottom:22px;
+  }
+  .owner .dot{ width:8px; height:8px; border-radius:50%; background:var(--teal); display:inline-block; }
+  .actions{ display:flex; flex-direction:column; gap:12px; margin-bottom:22px; }
+  .btn{
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:2px; width:100%; padding:13px 18px; border-radius:16px;
+    font-size:16px; font-weight:600; text-decoration:none; border:none;
+    cursor:pointer; transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+  }
+  .btn:active{ transform:scale(0.97); }
+  .btn-main{ display:flex; align-items:center; gap:10px; }
+  .btn-icon{ font-size:19px; line-height:1; }
+  .btn-en{ font-size:11px; font-weight:500; font-style:italic; opacity:0.75; }
+  .btn-primary{ background:var(--teal); color:#fff; box-shadow:0 10px 24px -8px rgba(31,111,92,0.55); }
+  .btn-primary:hover{ background:var(--teal-dark); }
+  .btn-primary .btn-en{ color:#EAF4F1; }
+  .btn-secondary{ background:var(--mint); color:var(--teal-dark); }
+  .btn-secondary:hover{ background:#d7ece4; }
+  .btn-secondary .btn-en{ color:#4C8776; }
+  .btn-whatsapp{ background:var(--whatsapp); color:#fff; box-shadow:0 10px 24px -8px rgba(34,184,88,0.5); }
+  .reward{
+    background:var(--amber-bg); color:#8a5420; font-size:13.5px; font-weight:600;
+    padding:12px 14px; border-radius:14px; margin-bottom:20px;
+  }
+  .divider{ height:1px; background:var(--ring); margin:0 0 16px; }
+  .privacy{
+    display:flex; align-items:flex-start; gap:8px; font-size:12.5px;
+    color:var(--ink-soft); text-align:left; line-height:1.5;
+  }
+  .privacy .icon{ font-size:14px; margin-top:1px; }
+  @media (max-width:360px){ h1{ font-size:23px; } .card{ padding:34px 20px 26px; } }
+</style>
+</head>
+<body>
+  <div class="tag-wrap">
+    <div class="cord"></div>
+    <div class="card">
+      <div class="punch"></div>
+      <div class="eyebrow">Cet objet a un propriétaire</div>
+      <div class="eyebrow-en">This item has an owner</div>
+      <h1>Objet trouvé<br>Merci&nbsp;🙏</h1>
+      <p class="msg">
+        Vous avez trouvé un objet qui m'appartient — merci infiniment pour
+        votre honnêteté, ça fait vraiment plaisir. Un petit message suffit
+        pour qu'on s'organise pour la restitution.
+      </p>
+      <p class="en msg-en">
+        You found something that belongs to me — thank you for your
+        honesty. A quick message is all it takes to get it back to me.
+      </p>
+      <div class="owner">
+        <span class="dot"></span>
+        Propriétaire : <span id="ownerName">Prénom</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="tel:+41000000000">
+          <span class="btn-main"><span class="btn-icon">📞</span> Appeler</span>
+          <span class="btn-en">Call</span>
+        </a>
+        <a class="btn btn-secondary" href="sms:+41000000000">
+          <span class="btn-main"><span class="btn-icon">💬</span> Envoyer un message</span>
+          <span class="btn-en">Send a message</span>
+        </a>
+        <a class="btn btn-secondary" href="mailto:email@exemple.ch">
+          <span class="btn-main"><span class="btn-icon">✉️</span> Envoyer un email</span>
+          <span class="btn-en">Send an email</span>
+        </a>
+        <a class="btn btn-whatsapp" href="https://wa.me/41000000000" target="_blank" rel="noopener">
+          <span class="btn-main"><span class="btn-icon">🟢</span> WhatsApp</span>
+        </a>
+      </div>
+      <div class="reward">
+        🎁 Une petite récompense peut être offerte avec plaisir 😊
+        <div class="en" style="color:#A87B3F; margin-top:4px; opacity:0.85;">A small reward can gladly be offered</div>
+      </div>
+      <div class="divider"></div>
+      <div class="privacy">
+        <span class="icon">🔒</span>
+        <span>
+          Merci de ne pas conserver ces coordonnées après avoir pris contact.
+          <br><span class="en">Please don't keep these details after reaching out.</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
